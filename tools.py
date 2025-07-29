@@ -6,7 +6,6 @@ def run_nmap_scan(arguments: str) -> str:
     It returns the output of the nmap scan.
     '''
     try:
-        print(arguments,"HEHEHEH")
         # Split the string into a list of arguments
         args_list = arguments.split()
         result = subprocess.run(["nmap"] + args_list, capture_output=True, text=True)
