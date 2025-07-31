@@ -121,4 +121,4 @@ def run_gitleaks(url:str)->list[dict]:
 if __name__ == "__main__":
     # print(json.dumps(run_trufflehog("https://github.com/RolandCroft/Language-Security-Challenges"), indent=4))
     # print(json.dumps(run_gitleaks("https://github.com/RolandCroft/Language-Security-Challenges"), indent=4))
-
+    1
