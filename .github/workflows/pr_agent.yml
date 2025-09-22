@@ -2,6 +2,7 @@ on:
   pull_request:
     types: [opened, reopened, ready_for_review]
   issue_comment:
+
 jobs:
   pr_agent_job:
     if: ${{ github.event.sender.type != 'Bot' }}
@@ -16,7 +17,13 @@ jobs:
         id: pragent
         uses: qodo-ai/pr-agent@main
         env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            config.model: "gpt-4o"
-              
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+          # Azure OpenAI credentials (already stored in GitHub secrets)
+          OPENAI_API_KEY: ${{ secrets.KEY }}
+          OPENAI_API_BASE: ${{ secrets.API_BASE }}   
+          OPENAI_API_VERSION: ${{ secrets.API_VERSION }} 
+          OPENAI_API_TYPE: ${{ secrets.API_TYPE }}   
+
+          # Model deployment name in Azure (not raw model like gpt-4o, but your deployment name)
+          config.model: "gpt-4o"
