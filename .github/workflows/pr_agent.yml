@@ -16,5 +16,7 @@ jobs:
         id: pragent
         uses: qodo-ai/pr-agent@main
         env:
-              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            config.model: "gpt-4o"
+              
 
