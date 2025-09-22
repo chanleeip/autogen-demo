@@ -15,3 +15,6 @@ jobs:
       - name: PR Agent action step
         id: pragent
         uses: qodo-ai/pr-agent@main
+        env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
